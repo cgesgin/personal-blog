@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .article {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .title {
+            font-weight: bold;
+            text-decoration: none;
+            color: black;   
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        .date {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Personal Blog</h2>
+    <div th:each="article : ${articles}" class="article">
+        <a class="title" th:href="@{/article/{id}(id=${article.id})}"><span class="title" th:text="${article.title}"></span></a>
+        <span class="date" th:text="${article.created}"></span>
+    </div>
+</div>
+</body>
+</html>

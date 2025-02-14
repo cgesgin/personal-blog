@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Article</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            width: 600px;
+        }
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 15px 0 8px;
+            font-size: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 3px solid black;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+        textarea {
+            height: 200px;
+            resize: none;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 15px;
+            background: white;
+            border: 3px solid black;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        button:hover {
+            background: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Edit Article</h2>
+    <form action="#" th:action=" @{/edit/{id}(id=${article.id})}" method="post" th:object="${article}">
+
+        <input type="hidden" id="id" name="id" th:field="*{id}">
+        
+        <label for="title">Article Title</label>
+        <input type="text" id="title" name="title" th:field="*{title}">
+
+        <label for="content">Content</label>
+        <textarea id="content" name="content" th:field="*{content}"></textarea>
+
+        <button type="submit">update</button>
+    </form>
+</div>
+</body>
+</html>

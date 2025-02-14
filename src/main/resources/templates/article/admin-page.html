@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            max-width: 900px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .add-button {
+            font-size: 18px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .article {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .actions a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: gray;
+        }
+        .actions a:hover {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Personal Blog <a href="/new" class="add-button">+ Add</a></h2>
+    <div th:each="article : ${articles}" class="article">
+        <a class="title" th:href="@{/article/{id}(id=${article.id})}"><span th:text="${article.title}">Article Title</span></a>
+        <div class="actions">
+            <a th:href="@{/edit/{id}(id=${article.id})}">Edit</a>
+            <a th:href="@{/delete/{id}(id=${article.id})}" onclick="return confirm('Are you sure?')">Delete</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
