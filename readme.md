@@ -28,7 +28,7 @@ To get started with the project, follow these steps:
 
 - Clone the repository:
 
-        git clone https://github.com/your-repo/personal-blog.git
+        git clone https://github.com/cgesgin/personal-blog.git
 
 - Navigate to the project directory:
 
