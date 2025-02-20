@@ -32,7 +32,7 @@ To get started with the project, follow these steps:
 
 - Navigate to the project directory:
 
-        cd unit-converter
+        cd personal-blog
 
 - Build the project:
 
