@@ -1,7 +1,5 @@
 ## 🎯 Overview
-This project is a simple and functional personal blog web application where users can write and publish articles on various topics. For more information and details on how to contribute, you can check this link:
-
-    https://roadmap.sh/projects/personal-blog
+Solution to the roadmap.sh project https://roadmap.sh/projects/personal-blog
 
 ## 🔍 Features
 
